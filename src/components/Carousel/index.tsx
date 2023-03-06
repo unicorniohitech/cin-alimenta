@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import { Container } from '@mui/material';
-import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { Container } from '@mui/material'
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 
 const Carousel = () => (
   <Container
@@ -26,6 +26,6 @@ const Carousel = () => (
       sx={{ cursor: 'pointer', paddingRight: '50px' }}
     />
   </Container>
-);
+)
 
-export default Carousel;
+export default Carousel
