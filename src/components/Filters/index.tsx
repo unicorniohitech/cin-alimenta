@@ -8,7 +8,6 @@ import {
   MenuItem,
   // Select,
   // SelectChangeEvent,
-  Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
 
@@ -26,7 +25,7 @@ const Filters = () => {
 
   return (
     <S.FiltersContainer>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', height: '2.2rem', marginTop: '0px' }}>
         <S.Search>
           <S.SearchIconWrapper>
             <SearchIcon />
@@ -38,21 +37,20 @@ const Filters = () => {
           Filtro
         </S.FilterButton>
       </div>
-      <Box sx={{ minWidth: '35%', display: 'flex', alignItems: 'center' }}>
-        <Typography sx={{ color: 'black', minWidth: 'auto', marginRight: '1.2rem' }}>
-          Ordenar por:{' '}
-        </Typography>
-
-        <FormControl sx={{ minWidth: '50%', display: 'flex', flexDirection: 'row' }} size="small">
+      <Box sx={{ minWidth: '35%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
+        <FormControl
+          sx={{ minWidth: '50%', display: 'flex', flexDirection: 'row', marginTop: '0px' }}
+          size="small"
+        >
           <InputLabel id="demo-simple-select-autowidth-label">Ordernar por</InputLabel>
           <S.FilterSelect
-            sx={{ width: '100%', alignItems: 'center' }}
+            sx={{ width: '100%', textAlign: 'start' }}
             labelId="demo-simple-select-autowidth-label"
             id="demo-simple-select-autowidth"
             // value={order}
             // onChange={handleChange}
             autoWidth
-            defaultValue="Ordenar por"
+            // defaultValue="Ordenar por"
             label="Ordernar por"
           >
             {ordenation.map((item, index) => (

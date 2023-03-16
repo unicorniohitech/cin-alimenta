@@ -16,12 +16,8 @@ export const VerticalLine = styled.span`
 
 export const Header = styled(AppBar)`
   &.MuiAppBar-root {
-    position: absolute;
+    position: relative;
   }
-  // border-bottom: solid 3px #ff7878;
-  // background-color: transparent;
-  // box-shadow: 0px 1px 1px 1px rgb(0 0 0 / 20%), 0px 1px 5px 0px rgb(0 0 0 / 14%),
-  //   0px 8px 8px 0px rgb(0 0 0 / 12%);
 `
 
 export const ContainerToolbar = styled(Toolbar)`
@@ -46,7 +42,6 @@ export const ButtonBar = styled(IconButton)`
 
 export const AccountUser = styled(AccountCircleOutlined)`
   color: #ff7878;
-  // border-color: #ff7878;
   :focus {
     outline: none !important;
   }
@@ -77,15 +72,13 @@ export const ContentHeader = styled(Container)`
 export const ButtonBoxMenu = styled(Box)`
   justify-content: center;
   flex-direction: column;
-  display: flex;
-  background-color: inherit;
+  background-color: #fff6f5;
   color: #ff7878;
   align-items: center;
   position: relative;
   margin: 20px 0;
   :hover {
     transform: scale(1.1, 1.1);
-    // box-shadow: 0 4px 4px #999;
     transition: all 0.2s ease-in-out;
     border: 1px solid #ff7878;
   }
@@ -96,5 +89,33 @@ export const ButtonBoxMenu = styled(Box)`
   }
   p:last-child {
     margin-top: 1em;
+  }
+`
+export const BodyContainer = styled(Container)`
+  &.MuiContainer-root {
+    background-color: #fff6f5;
+    /* background-color: #ffecee; */
+    max-width: none;
+    width: auto;
+    margin: 0 40px 40px 40px;
+    top: 40px;
+    position: relative;
+    padding: 15px;
+    border-radius: 15px;
+  }
+`
+
+export const Content = styled(Container)`
+  &.MuiContainer-root {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    padding: 0px;
+    max-width: 100%;
+    /* background-color: #dedede; */
+    background-color: #efefef;
   }
 `

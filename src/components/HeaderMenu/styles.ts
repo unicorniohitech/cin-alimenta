@@ -1,6 +1,21 @@
 import styled from 'styled-components'
 
-import { Box } from '@mui/material'
+import { Box, Container } from '@mui/material'
+
+export const Content = styled(Container)`
+  &.MuiContainer-root {
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    /* right: 0; */
+    padding: 0px;
+    max-width: none;
+    width: auto;
+    margin: 0 40px;
+    /* background-color: #dedede; */
+    /* background-color: #efefef; */
+  }
+`
 
 export const VerticalLine = styled.span`
   border-left: solid 2px #ff7878;

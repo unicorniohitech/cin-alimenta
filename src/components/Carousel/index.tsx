@@ -1,20 +1,12 @@
 import React from 'react'
 
-import { Container } from '@mui/material'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 
+import * as S from './styles'
+
 const Carousel = () => (
-  <Container
-    maxWidth="xl"
-    sx={{
-      backgroundColor: '#f2f78b',
-      height: '300px',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      display: 'flex',
-    }}
-  >
+  <S.CarrouselContainer>
     <ArrowBackIosOutlinedIcon
       fontSize="large"
       color="secondary"
@@ -25,7 +17,7 @@ const Carousel = () => (
       color="secondary"
       sx={{ cursor: 'pointer', paddingRight: '50px' }}
     />
-  </Container>
+  </S.CarrouselContainer>
 )
 
 export default Carousel
