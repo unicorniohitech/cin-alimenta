@@ -1,17 +1,35 @@
 import styled from 'styled-components'
 
-import { InputBase, Container, Button, Select } from '@mui/material'
+import { InputBase, Button, Select, Container, Grid } from '@mui/material'
 
-export const FiltersContainer = styled(Container)`
+export const ProductGrid = styled(Grid)`
+  &.MuiGrid-root {
+    margin: 20px 0 0 0;
+    max-width: 100%;
+    /* max-width: 1200px; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid;
+  }
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  /* padding: 0 20px; */
+  border-radius: 0 0 15px 15px;
+`
+
+export const CardContainer = styled(Container)`
   &.MuiContainer-root {
-    /* width: auto; */
-    max-width: none;
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 8px;
-    padding: 0;
+    margin: 8px 0;
   }
+`
+
+export const Img = styled.img`
+  /* width: 190px;
+  height: 130px; */
 `
 
 export const Search = styled.div`
@@ -20,7 +38,6 @@ export const Search = styled.div`
   margin-right: 16px;
   margin-left: 0;
   /* width: 100%; */
-  height: 2.2rem;
   position: relative;
 `
 
@@ -29,26 +46,15 @@ export const FilterButton = styled(Button)`
     border: 1px solid #ff7878;
     color: #ff7878;
     outline: none;
-    /* padding: 0; */
-    height: 2.2rem;
-    background-color: #fff;
   }
 `
 
 export const FilterSelect = styled(Select)`
-  border-color: #ff7878;
   &.MuiOutlinedInput-notchedOutline {
+    border-color: #ff7878;
     color: #ff7878;
     outline: none;
-    background-color: #fff;
-    &.MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-      /* height: 2.2rem; */
-      /* padding-right: 50px; */
-      padding: 6.5px 14px !important;
-    }
   }
-  /* height: 2.2rem; */
-  background-color: #fff;
 `
 
 export const SearchIconWrapper = styled.div`

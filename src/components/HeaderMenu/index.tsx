@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined'
 import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined'
 import DinnerDiningOutlinedIcon from '@mui/icons-material/DinnerDiningOutlined'
@@ -33,7 +33,7 @@ const HeaderMenu = () => {
   ]
 
   return (
-    <Container maxWidth="xl">
+    <S.Content>
       {/* <Container disableGutters> */}
       <Box
         sx={{
@@ -57,7 +57,7 @@ const HeaderMenu = () => {
           </S.ButtonMenu>
         ))}
       </Box>
-    </Container>
+    </S.Content>
   )
 }
 

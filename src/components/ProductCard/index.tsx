@@ -1,8 +1,6 @@
 import React from 'react'
 
 import {
-  Button,
-  // Card,
   CardActions,
   CardContent,
   CardMedia,
@@ -13,9 +11,15 @@ import {
 
 import * as S from './styles'
 
-const ProductCard = () => {
+export interface Card {
+  productName: string
+  description: string
+  value: string
+}
+
+const ProductCard = (props: Card) => {
   const ordenation: Array<string> = ['1', 'Maior Preço']
-  console.log(ordenation)
+  console.log(ordenation, props)
 
   // const [order, setOrder] = React.useState('')
 
@@ -25,7 +29,7 @@ const ProductCard = () => {
 
   return (
     <S.CardContainer>
-      <S.ProductCard sx={{ maxWidth: 245 }}>
+      <S.ProductCard>
         <CardMedia component="img" alt="green iguana" height="140" image="src\assets\food.jpg" />
         <CardContent>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -54,8 +58,8 @@ const ProductCard = () => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Ver mais</Button>
-          <Button size="small">Learn More</Button>
+          <S.CardButton size="small">Adicionar ao carrinho</S.CardButton>
+          <S.CardButton size="small">Mais info.</S.CardButton>
         </CardActions>
       </S.ProductCard>
     </S.CardContainer>
