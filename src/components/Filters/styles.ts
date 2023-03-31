@@ -36,18 +36,29 @@ export const FilterButton = styled(Button)`
 `
 
 export const FilterSelect = styled(Select)`
-  border-color: #ff7878;
-  &.MuiOutlinedInput-notchedOutline {
-    color: #ff7878;
-    outline: none;
-    background-color: #fff;
-    &.MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-      /* height: 2.2rem; */
-      /* padding-right: 50px; */
-      padding: 6.5px 14px !important;
+  &.MuiOutlinedInput-root {
+    & fieldset {
+      border: 1px solid #ff7878;
+    }
+    &:hover fieldset {
+      border: 1px solid #ff7878;
+    }
+    &.Mui-focused fieldset {
+      border: 1px solid #ff7878;
     }
   }
-  /* height: 2.2rem; */
+  &.MuiInput-root.Mui-focused {
+    color: #ff7878;
+  }
+  height: 2.2rem;
+  /* border: 1px solid #ff7878; */
+
+  &.MuiInputBase-root {
+    border-radius: 4px;
+  }
+  & label.Mui-focused {
+    color: green;
+  }
   background-color: #fff;
 `
 

@@ -42,7 +42,6 @@ const HeaderMenu = () => {
             xs: 'flex',
             md: 'flex',
           },
-          height: '20vh',
         }}
       >
         {pages.map((page, index) => (
