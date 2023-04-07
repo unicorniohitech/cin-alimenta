@@ -41,7 +41,7 @@ export const FilterSelect = styled(Select)`
       border: 1px solid #ff7878;
     }
     &:hover fieldset {
-      border: 1px solid #ff7878;
+      border: 1px solid #5b5f97;
     }
     &.Mui-focused fieldset {
       border: 1px solid #ff7878;

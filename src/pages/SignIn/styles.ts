@@ -5,6 +5,7 @@ import { Box, Button, Container, Typography } from '@mui/material'
 export const SignInConteiner = styled(Container)`
   &.MuiContainer-root {
     display: flex;
+    max-width: 100%;
   }
   flex-wrap: wrap;
   top: 0;
@@ -36,6 +37,12 @@ export const SignInButton = styled(Button)`
 `
 export const SignInTitle = styled(Typography)`
   &.MuiTypography-root {
-    margin-bottom: 0.83em;
+    margin-bottom: 0;
   }
+`
+
+export const ContentLogo = styled(Box)`
+  justify-content: center;
+  display: flex;
+  width: 100%;
 `

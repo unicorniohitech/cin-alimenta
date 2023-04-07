@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { yupResolver } from '@hookform/resolvers/yup'
-import { TextField } from '@mui/material'
+import { TextField, Typography, Link } from '@mui/material'
 
 import * as S from './styles'
 
@@ -35,6 +35,26 @@ const SignIn = () => {
     <S.SignInConteiner>
       <S.SignInBox>
         <S.SignInForm style={{ padding: 'auto' }} onSubmit={handleSubmit(onSubmitHandler)}>
+          <S.ContentLogo>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              // href="/"
+              sx={{
+                mr: 2,
+                display: { xs: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: '#FF7878',
+                textDecoration: 'none',
+                marginRight: 0,
+              }}
+            >
+              Cin Alimenta
+            </Typography>
+          </S.ContentLogo>
           <S.SignInTitle sx={{ fontWeight: '400' }} variant="h5" color="#696969">
             Insira seu usuário e senha
           </S.SignInTitle>
@@ -76,6 +96,25 @@ const SignIn = () => {
           /> */}
           {errors.password && <p>{errors.password?.message}</p>}
           <S.SignInButton type="submit">Entrar</S.SignInButton>
+          <Typography
+            variant="body2"
+            noWrap
+            sx={{
+              display: { xs: 'flex' },
+              textAlign: 'right',
+              fontFamily: 'monospace',
+              fontWeight: 400,
+              color: '#FF7878',
+              textDecoration: 'none',
+              marginRight: 0,
+            }}
+          >
+            Ainda não é cadastrado?{' '}
+            <Link underline="none" href="/">
+              {' '}
+              Cadastre-se.
+            </Link>
+          </Typography>
         </S.SignInForm>
       </S.SignInBox>
     </S.SignInConteiner>
