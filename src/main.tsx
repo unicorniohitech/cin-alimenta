@@ -1,15 +1,19 @@
 import React from 'react'
 
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 
-// import App from './App'
-// import Home from './pages/Home'
-import SignIn from './pages/SignIn'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
 import './index.css'
+import Routes from './routes'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const queryClient = new QueryClient()
+
+ReactDOM.render(
   <React.StrictMode>
-    <SignIn />
-    {/* <Home /> */}
+    <QueryClientProvider client={queryClient}>
+      <Routes />
+    </QueryClientProvider>
   </React.StrictMode>,
+  document.getElementById('root'),
 )
