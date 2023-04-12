@@ -70,7 +70,6 @@ const SignUp = () => {
   const onSubmitHandler = (data: SignUp) => {
     console.log(data)
     reset()
-    clearErrors()
     history.push(ROUTES.HOME)
   }
 
@@ -80,7 +79,7 @@ const SignUp = () => {
         <S.SignUpForm style={{ padding: 'auto' }} onSubmit={handleSubmit(onSubmitHandler)}>
           <S.ContentLogo>
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="a"
               // href="/"
@@ -98,7 +97,7 @@ const SignUp = () => {
               Cin Alimenta
             </Typography>
           </S.ContentLogo>
-          <S.SignUpTitle sx={{ fontWeight: '400' }} variant="h5" color="#696969">
+          <S.SignUpTitle sx={{ fontWeight: '400' }} variant="h6" color="#696969">
             Cadastre-se
           </S.SignUpTitle>
 
