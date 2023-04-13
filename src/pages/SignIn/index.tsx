@@ -114,7 +114,7 @@ const SignIn = () => {
             }}
           >
             Ainda não é cadastrado?{' '}
-            <Link underline="none" href="/">
+            <Link sx={{ marginLeft: 'auto', color: '#FF7878' }} underline="none" href="/signup">
               {' '}
               Cadastre-se.
             </Link>
