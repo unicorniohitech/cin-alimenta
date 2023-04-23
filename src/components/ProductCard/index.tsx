@@ -1,65 +1,78 @@
 import React from 'react'
 
-import {
-  CardActions,
-  CardContent,
-  CardMedia,
-  // Select,
-  // SelectChangeEvent,
-  Typography,
-} from '@mui/material'
+import { CardContent, CardActions, CardMedia, Typography } from '@mui/material'
 
 import * as S from './styles'
+import { Card } from './types'
+import { ProductCardInfo } from './ProductCardInfo'
 
-export interface Card {
-  productName: string
-  description: string
-  value: string
-}
-
-const ProductCard = (props: Card) => {
-  const ordenation: Array<string> = ['1', 'Maior Preço']
-  console.log(ordenation, props)
-
-  // const [order, setOrder] = React.useState('')
-
-  // const handleChange = (event: SelectChangeEvent) => {
-  //   setOrder(event.target.value)
-  // }
+const ProductCard = (card: Card) => {
+  const { productName, restaurantName, value, description } = card
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
     <S.CardContainer>
       <S.ProductCard>
-        <CardMedia component="img" alt="green iguana" height="140" image="src\assets\food.jpg" />
+        <ProductCardInfo {...{ open, handleClose, card }} />
+        <CardMedia
+          sx={{ minWidth: '300px', maxWidth: '1fr' }}
+          component="img"
+          alt="green iguana"
+          height="140"
+          image="src\assets\food.jpg"
+        />
         <CardContent>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <Typography
               sx={{ textAlign: 'left' }}
               gutterBottom
               variant="h6"
               component="div"
+              lineHeight="0.8"
               color="#696969"
               fontWeight="600"
             >
-              Product Name
+              {productName}
             </Typography>
+            <Typography
+              sx={{
+                display: 'flex',
+                alignContent: 'flex-start',
+                flexWrap: 'wrap',
+              }}
+              gutterBottom
+              variant="body1"
+              height="2rem"
+              alignContent="start"
+              color="#b1b1b1"
+              fontWeight="600"
+            >
+              {restaurantName}
+            </Typography>
+            <S.DescriptionText variant="body2" color="#696969">
+              {description}
+            </S.DescriptionText>
           </div>
-          <Typography sx={{ textAlign: 'justify' }} variant="body2" color="#696969">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id tempor tortor, sit
-            amet molestie erat. Phasellus suscipit mattis elit.
-          </Typography>
+        </CardContent>
+        <CardContent sx={{ marginTop: 'auto', padding: '0px 16px' }}>
           <Typography
             sx={{ textAlign: 'right', marginTop: '0.35em', marginBottom: '0' }}
             gutterBottom
             variant="body1"
             color="#696969"
           >
-            R$ 19,00
+            {value}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions sx={{ padding: '16px' }}>
           <S.CardButton size="small">Adicionar ao carrinho</S.CardButton>
-          <S.CardButton size="small">Mais info.</S.CardButton>
+          <S.CardButton onClick={() => handleOpen()} size="small">
+            Ver mais
+          </S.CardButton>
         </CardActions>
       </S.ProductCard>
     </S.CardContainer>
