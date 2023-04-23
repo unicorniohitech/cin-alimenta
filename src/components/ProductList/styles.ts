@@ -6,14 +6,17 @@ export const ProductGrid = styled(Grid)`
   &.MuiGrid-root {
     margin: 20px 0 0 0;
     max-width: 100%;
-    /* max-width: 1200px; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     display: grid;
+    .MuiGrid-item {
+      padding: 0px;
+      display: flex;
+    }
   }
+  display: flex;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 25px;
   justify-content: center;
-  /* padding: 0 20px; */
   border-radius: 0 0 15px 15px;
 `
 
@@ -27,17 +30,11 @@ export const CardContainer = styled(Container)`
   }
 `
 
-export const Img = styled.img`
-  /* width: 190px;
-  height: 130px; */
-`
-
 export const Search = styled.div`
   border-radius: 4px;
   background-color: rgba(255, 120, 120, 0.2);
   margin-right: 16px;
   margin-left: 0;
-  /* width: 100%; */
   position: relative;
 `
 

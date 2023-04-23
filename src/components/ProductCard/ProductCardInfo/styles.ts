@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 
+import { Box } from '@mui/material'
 import { Button, Card, Container, Typography } from '@mui/material'
+
+export const CardInfoBox = styled(Box)`
+  &.MuiBox-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff6f5;
+    border: 1px solid #ff7878;
+    box-shadow: 24;
+    padding: 40px;
+    border-radius: 8px;
+  }
+`
 
 export const ProductCard = styled(Card)`
   &.MuiCard-root {
@@ -15,12 +31,19 @@ export const ProductCard = styled(Card)`
 
 export const CardContainer = styled(Container)`
   &.MuiContainer-root {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    border: 1px solid #ff7878;
+    box-shadow: 24;
+    padding: 40px;
+    border-radius: 8px;
     padding: 0;
   }
 `
+
 export const CardButton = styled(Button)`
   &.MuiButton-root {
     border: 1px solid #ff7878;
@@ -32,11 +55,11 @@ export const CardButton = styled(Button)`
     padding: 0px 5px;
   }
 `
+
 export const DescriptionText = styled(Typography)`
   text-align: justify;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2;
+  line-clamp: 2; */
   -webkit-box-orient: vertical;
 `
