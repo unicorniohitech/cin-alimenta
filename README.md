@@ -11,7 +11,7 @@ Projeto da Disciplina de Engenharia de  Software 2022.2 em SI
 
 ## [2] Ambiência do time no projeto
 
-https://github.com/unicorniohitech/cin-food/commit/0849b4d5b43a60cffc6aa83cea2621b48edcc8d7 
+https://github.com/unicorniohitech/cin-food
 
 ## [3] Big idea 
 
