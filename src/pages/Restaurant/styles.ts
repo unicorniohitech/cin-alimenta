@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { AppBar, Badge, Box, Container, IconButton, Toolbar } from '@mui/material'
+import { AppBar, Box, Container, IconButton, Toolbar } from '@mui/material'
 import { ShoppingCartOutlined, AccountCircleOutlined } from '@mui/icons-material'
 
 export const Line = styled.hr`
@@ -55,19 +55,6 @@ export const ContentAccount = styled(Box)`
     outline: none !important;
   }
   justify-content: space-between;
-`
-
-export const StyledBadge = styled(Badge)`
-  .MuiBadge-badge {
-    position: absolute;
-    right: -3;
-    bottom: auto;
-    top: 33;
-    border: 2px solid #5b5f97;
-    padding: 0 4px;
-    color: #fff;
-    background-color: #5b5f97;
-  }
 `
 
 export const ContentLogo = styled(Box)`

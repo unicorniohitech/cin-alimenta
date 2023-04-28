@@ -1,4 +1,4 @@
-export interface Card {
+export type Card = {
   productName: string
   restaurantName: string
   description: string

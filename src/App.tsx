@@ -1,35 +1,44 @@
-import { useState } from 'react'
-
-import reactLogo from './assets/react.svg'
-
-import './App.css'
-import { Router, BrowserRouter, Route } from 'react-router-dom'
-
 import React from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+
+import Routes from './routes'
+import HomeLayout from './pages/Home'
+import { GlobalStateProvider, useGlobalStateContext } from './hooks/globalStateProvider'
+import SignIn from './pages/SignIn'
+// import { ROUTES } from './routes/routes.ENUM'
+
+const queryClient = new QueryClient()
+
+const App = () => {
+  console.log('-----')
+  const { logged } = useGlobalStateContext()
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </div>
+    <>
+      {logged ? (
+        <HomeLayout>
+          <Routes />
+        </HomeLayout>
+      ) : (
+        <React.Suspense fallback={<div />}>
+          <SignIn />
+        </React.Suspense>
+      )}
+    </>
   )
 }
+const AppWithProviders = () => (
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <GlobalStateProvider>
+        <App />
+      </GlobalStateProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
+)
 
-export default App
+export default AppWithProviders
