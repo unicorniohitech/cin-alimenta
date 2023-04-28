@@ -1,20 +1,18 @@
 import React from 'react'
 
 import { CardContent, CardActions, CardMedia, Modal, Typography } from '@mui/material'
-import { Card } from '@/components/ProductCard/types'
-import { useGlobalStateContext } from '@/hooks/globalStateProvider'
+import { OrderCardProps } from '@/components/OrderCard/types'
 
 import * as S from './styles'
 
-interface CardInfo {
+interface OrderInfo {
   open: boolean
   handleClose: () => void
-  card: Card
+  order: OrderCardProps
 }
 
-export const ProductCardInfo = ({ open, handleClose, card }: CardInfo) => {
-  const { productName, restaurantName, value, description } = card
-  const { handleCart } = useGlobalStateContext()
+export const OrderCardInfo = ({ open, handleClose, order }: OrderInfo) => {
+  const { productName, restaurantName, value, description } = order
 
   return (
     <div>
@@ -83,14 +81,7 @@ export const ProductCardInfo = ({ open, handleClose, card }: CardInfo) => {
               </Typography>
             </CardContent>
             <CardActions sx={{ padding: '16px' }}>
-              <S.CardButton
-                onClick={() => {
-                  handleCart(card)
-                }}
-                size="small"
-              >
-                Adicionar ao carrinho
-              </S.CardButton>
+              <S.CardButton size="small">Adicionar ao carrinho</S.CardButton>
               <S.CardButton onClick={() => handleClose()} size="small">
                 Fechar
               </S.CardButton>

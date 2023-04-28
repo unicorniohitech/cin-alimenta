@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { TextField, Typography, Link } from '@mui/material'
 import { ROUTES } from '@/routes/routes.ENUM'
+import { useGlobalStateContext } from '@/hooks/globalStateProvider'
 
 import * as S from './styles'
 
@@ -16,6 +17,7 @@ interface SignIn {
 }
 const SignIn = () => {
   const history = useHistory()
+  const { handleLogged } = useGlobalStateContext()
   const schema = yup.object({
     email: yup.string().email().required(),
     password: yup.string().min(8).max(32).required(),
@@ -32,7 +34,9 @@ const SignIn = () => {
   const onSubmitHandler = (data: SignIn) => {
     console.log(data)
     reset()
-    history.push(ROUTES.HOME)
+    handleLogged(true)
+
+    history.push(ROUTES.CLIENT)
   }
 
   return (

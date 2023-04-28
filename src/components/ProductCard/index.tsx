@@ -1,12 +1,18 @@
 import React from 'react'
 
 import { CardContent, CardActions, CardMedia, Typography } from '@mui/material'
+import { useGlobalStateContext } from '@/hooks/globalStateProvider'
 
 import * as S from './styles'
 import { Card } from './types'
 import { ProductCardInfo } from './ProductCardInfo'
 
-const ProductCard = (card: Card) => {
+type Product = {
+  qtd: number
+} & Card
+
+const ProductCard = (card: Product) => {
+  const { handleCart } = useGlobalStateContext()
   const { productName, restaurantName, value, description } = card
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
@@ -69,7 +75,14 @@ const ProductCard = (card: Card) => {
           </Typography>
         </CardContent>
         <CardActions sx={{ padding: '16px' }}>
-          <S.CardButton size="small">Adicionar ao carrinho</S.CardButton>
+          <S.CardButton
+            onClick={() => {
+              handleCart(card)
+            }}
+            size="small"
+          >
+            Adicionar ao carrinho
+          </S.CardButton>
           <S.CardButton onClick={() => handleOpen()} size="small">
             Ver mais
           </S.CardButton>

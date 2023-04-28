@@ -2,9 +2,10 @@ import React from 'react'
 
 import { Box, Typography } from '@mui/material'
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined'
-import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined'
 import DinnerDiningOutlinedIcon from '@mui/icons-material/DinnerDiningOutlined'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined'
 
 import * as S from './styles'
 
@@ -21,15 +22,17 @@ const HeaderMenu = () => {
       ),
     },
     {
-      name: 'Lanchonetes',
-      icon: <FastfoodOutlinedIcon fontSize="large" sx={{ display: { xs: 'flex', md: 'flex' } }} />,
-    },
-    {
       name: 'Produtos',
       icon: (
         <DinnerDiningOutlinedIcon fontSize="large" sx={{ display: { xs: 'flex', md: 'flex' } }} />
       ),
     },
+    // {
+    //   name: 'Pedidos',
+    //   icon: (
+    //     <ShoppingBagOutlinedIcon fontSize="large" sx={{ display: { xs: 'flex', md: 'flex' } }} />
+    //   ),
+    // },
   ]
 
   return (
